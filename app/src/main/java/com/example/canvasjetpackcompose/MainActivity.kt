@@ -25,11 +25,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.graphics.drawscope.scale
+import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -151,9 +157,86 @@ fun CanvasDrawLine() {
                 )
             )
            */
+            /*
             drawPath(
-                
+                color = Color.Black,
+                path = Path().apply {
+                    moveTo(100f,100f)
+                    lineTo(150f,200f)
+                    lineTo(0f,40f)
+                    addRect(Rect(
+                        Offset(100f,150f),
+                        Size(150f,200f)
+                    ))
+                },
+                style = Stroke(
+                    10f,
+
+                )
             )
+            */
+            /*
+            rotate(
+                degrees = 190f,
+                pivot = Offset(150f,250f)
+            ){
+                drawRect(
+                    brush = Brush.horizontalGradient(
+                        Pair(0f, Color.Black),
+                        Pair(0.5f, Color.Blue),
+                        Pair(1f,Color.Red),
+                        startX = 100f,
+                        endX = 200f
+                    ),
+                    topLeft = Offset(100f,150f),
+                    size = Size(100f,200f),
+
+                    )
+            }
+             */
+            /*
+            scale(
+                scaleX = 3f,
+                scaleY = 3f,
+                pivot = Offset(150f,250f)
+            ){
+                drawRect(
+                    brush = Brush.horizontalGradient(
+                        Pair(0f, Color.Black),
+                        Pair(0.5f, Color.Blue),
+                        Pair(1f,Color.Red),
+                        startX = 100f,
+                        endX = 200f
+                    ),
+                    topLeft = Offset(100f,150f),
+                    size = Size(100f,200f),
+
+                    )
+            }
+             */
+            rotate(
+                45f,
+                pivot = Offset(150f,250f)
+            ) {
+                translate(
+                    left = 300f,
+                    top = 400f
+                ) {
+                    drawRect(
+                        brush = Brush.horizontalGradient(
+                            Pair(0f, Color.Black),
+                            Pair(0.5f, Color.Blue),
+                            Pair(1f, Color.Red),
+                            startX = 100f,
+                            endX = 200f
+                        ),
+                        topLeft = Offset(100f, 150f),
+                        size = Size(100f, 200f),
+
+                        )
+                }
+            }
+
         }
         Column(
             modifier = Modifier
