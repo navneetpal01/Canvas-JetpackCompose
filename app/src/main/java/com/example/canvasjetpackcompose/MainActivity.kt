@@ -23,10 +23,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -78,6 +81,7 @@ fun CanvasDrawLine() {
             modifier = Modifier
                 .fillMaxSize(),
         ) {
+            /*
             drawLine(
                 color = Color.Black,
                 start = Offset(50f, 50f),
@@ -89,8 +93,67 @@ fun CanvasDrawLine() {
                     intervals,
                     phase
                 )
-            )
+            ) */
 
+           /* drawCircle(
+                color = Color.Blue,
+                radius = 50f,
+                center = Offset(150f,150f),
+                alpha = 1f,
+                style = Stroke(
+                    width = 6f,
+                    pathEffect = PathEffect.dashPathEffect(
+                        intervals,
+                        phase
+                    )
+                ),
+            )
+            */
+            /*
+            drawOval(
+                color = Color.Blue,
+                topLeft = Offset(50f,50f),
+                size = Size(100f,200f)
+            )*/
+            /*
+            drawRect(
+                color = Color.Black,
+                topLeft = Offset(100f,50f),
+                size = Size(200f,150f),
+                
+            )
+            */
+            /*
+            drawArc(
+                color = Color.Black,
+                startAngle = 30f,
+                sweepAngle = 90f,
+                useCenter = false,
+                topLeft = Offset(100f,100f),
+                size = Size(150f,200f),
+                style = Stroke(
+                    width = 10f
+                )
+            )
+             */
+            /*
+            drawRoundRect(
+                color = Color.Blue,
+                topLeft = Offset(100f,50f),
+                size = Size(100f,200f),
+                cornerRadius = CornerRadius(
+                    x = 10f,
+                    y = 60f
+                ),
+                style = Stroke(
+                    20f,
+
+                )
+            )
+           */
+            drawPath(
+                
+            )
         }
         Column(
             modifier = Modifier
